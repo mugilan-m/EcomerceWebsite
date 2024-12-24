@@ -1,23 +1,42 @@
-import logo from './logo.svg';
+import Products from './components/Products';
 import './App.css';
-
+import Home from './components/Home';
+import Navbar from './components/Navbar';
+import State from './components/State';
+import Register from './components/Register';
+import Main from './Main';
+import Contact from './components/Contact';
+import { BrowserRouter as Router ,Route,Switch} from 'react-router-dom';
+import Card from './components/Card';
+import Shoes from './components/Shoes';
+import Product from './components/Product';
+import Error from './components/Error';
+import FrontPage from './components/FrontPage';
+import login from './components/Login.jsx';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <Router>
+        <Switch>
+        
+        <Route path="/contact" component={Contact} />
+        <Route path="/frontpage" component={FrontPage} />
+        <Route path="/products" component={Products} />
+        <Route path="/product" component={Product} />
+        <Route path="/login" component={login} />
+        <Route path="/home"  component={Home}/>
+        <Route path="/shoes"  component={Shoes}/>
+        <Route path="/card" component={Card} />
+        <Route path="/state" component={State} />
+        <Route path="/navbar" component={Navbar} />
+        <Route path="/register" component={Register} />
+        <Route path="/error" component={Error} />
+        <Route path="/" component={Main} />
+        <Route path="*" component={Error} />
+       
+        </Switch>
+        </Router>
+        
     </div>
   );
 }
